@@ -8,52 +8,86 @@ def home():
     <html>
     <head>
         <title>CI/CD Demo</title>
+ 
         <style>
-            body {
-                font-family: Arial, sans-serif;
-                margin: 0;
-                padding: 40px;
-                background: #f5f5f5;
-            }
  
-            .marquee-box {
-                width: 100%;
-                overflow: hidden;
-                white-space: nowrap;
-                box-sizing: border-box;
-                border: 2px solid black;
-                background: white;
-                padding: 20px 0;
-            }
+        body{
+            margin:0;
+            height:100vh;
+            background: linear-gradient(270deg,#ff6b6b,#4ecdc4,#45b7d1,#96c93d);
+            background-size: 800% 800%;
+            animation: bgmove 12s infinite;
+            font-family: Arial;
+            overflow:hidden;
+        }
  
-            .marquee-text {
-                display: inline-block;
-                padding-left: 100%;
-                animation: scroll-left 12s linear infinite;
-                font-size: 36px;
-                font-weight: bold;
-                color: black;
-            }
+        @keyframes bgmove{
+            0%{background-position:0% 50%}
+            50%{background-position:100% 50%}
+            100%{background-position:0% 50%}
+        }
  
-            @keyframes scroll-left {
-                0% {
-                    transform: translateX(0%);
-                }
-                100% {
-                    transform: translateX(-100%);
-                }
-            }
+        .scroll-text{
+            position:absolute;
+            top:20px;
+            white-space:nowrap;
+            font-size:40px;
+            font-weight:bold;
+            color:white;
+            animation: moveText 10s linear infinite;
+        }
+ 
+        @keyframes moveText{
+            0%{left:100%}
+            100%{left:-100%}
+        }
+ 
+        .ball{
+            width:60px;
+            height:60px;
+            background:red;
+            border-radius:50%;
+            position:absolute;
+            animation: bounce 4s infinite;
+        }
+ 
+        @keyframes bounce{
+            0%{top:200px; left:0}
+            50%{top:400px; left:80%}
+            100%{top:200px; left:0}
+        }
+ 
+        .square{
+            width:50px;
+            height:50px;
+            background:yellow;
+            position:absolute;
+            top:60%;
+            animation: moveSquare 6s infinite;
+        }
+ 
+        @keyframes moveSquare{
+            0%{left:0}
+            50%{left:90%}
+            100%{left:0}
+        }
+ 
         </style>
+ 
     </head>
+ 
     <body>
-        <div class="marquee-box">
-            <div class="marquee-text">
-                Hi Vijya this website is using CI/CD pipeline in backend
-            </div>
+ 
+        <div class="scroll-text">
+        CI/CD Pipeline working successfully 🚀
         </div>
+ 
+        <div class="ball"></div>
+ 
+        <div class="square"></div>
+ 
     </body>
     </html>
     """
  
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+app.run(host="0.0.0.0", port=5000)
