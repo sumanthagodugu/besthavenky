@@ -14,7 +14,9 @@ phases:
  
 artifacts:
   files:
-    - app.py
-    - appspec.yml
-    - requirements.txt
-    - scripts/**/*
+    - '**/*'
+  exclude-paths:
+    - '.git/**/*'
+    - '.gitignore'
+    - '__pycache__/**/*'
+ 
