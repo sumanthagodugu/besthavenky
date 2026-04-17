@@ -1,10 +1,9 @@
 from flask import Flask
- 
 app = Flask(__name__)
  
 @app.route("/")
-def home():
-    return "Hello from CI/CD pipeline"
+def hello world():
+    return "<h1>Hi Vijya this website is using CI/CD pipeline in backend<h1>"
  
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
