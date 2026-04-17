@@ -2,7 +2,7 @@ from flask import Flask
 app = Flask(__name__)
  
 @app.route("/")
-def hello world():
+def hello_world():
     return "<h1>Hi Vijya this website is using CI/CD pipeline in backend<h1>"
  
 if __name__ == "__main__":
