@@ -1,16 +1,25 @@
 version: 0.2
+ 
 phases:
   install:
     commands:
-      - echo "Installing depencies..."
+      - echo "Installing dependencies..."
+      - echo "Current directory:"
+      - pwd
+      - echo "Listing top-level files and folders:"
+      - ls -la
+      - echo "Listing all files from GitHub source:"
+      - find . -type f
       - pip3 install -r requirements.txt
  
   build:
     commands:
-      - echo "Build started on 'date'"
+      - echo "Build started"
+      - echo "Showing files again before build:"
+      - ls -la
+      - find . -type f
       - python3 -m py_compile app.py
-      - echo "compiling and packing the code"
-      - echo "Build completed on 'date'"
+      - echo "Build completed"
  
 artifacts:
   files:
@@ -19,4 +28,3 @@ artifacts:
     - '.git/**/*'
     - '.gitignore'
     - '__pycache__/**/*'
- 
