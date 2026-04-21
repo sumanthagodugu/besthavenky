@@ -7,7 +7,7 @@ def home():
     return """
     <html>
     <head>
-        <title>CI/CD Demo</title>
+        <title>CI/CD Demo with aws</title>
  
         <style>
  
